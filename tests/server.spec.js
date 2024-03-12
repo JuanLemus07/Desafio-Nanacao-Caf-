@@ -9,7 +9,7 @@ describe("Operaciones CRUD de cafes", () => {
         expect(response.body.length).toBeGreaterThanOrEqual(1)
     })
     test("comprobando que se obtiene un codigo 404 al intentar eliminar un cafe con id que no existe", async () => {
-        const idNoExistente = "uno"
+        const idNoExistente = "id_que_no_existe"
         const response = await request(server).delete(`/cafes/${idNoExistente}`)
         expect(response.status).toBe(404)
     })
